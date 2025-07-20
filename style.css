@@ -1,0 +1,138 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+  max-width: 350px;
+  width: 90%;
+  text-align: center;
+}
+
+.password-wrapper {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+#password {
+  width: 100%;
+  padding: 12px 45px 12px 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  margin-top: 10px;
+}
+
+#password:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 8px rgba(102,126,234,0.6);
+}
+
+#toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #667eea;
+  transition: color 0.3s ease;
+}
+
+#toggle-password:hover {
+  color: #764ba2;
+}
+
+#strength-bar {
+  height: 12px;
+  width: 100%;
+  background: #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+#strength-bar::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: var(--before-width, 0);
+  left: 0;
+  top: 0;
+  border-radius: 8px;
+  transition: width 0.4s ease, background-color 0.4s ease;
+  background: var(--before-bg, red);
+}
+
+#feedback {
+  font-weight: 700;
+  font-size: 16px;
+  margin: 0;
+  height: 24px;
+  color: #333;
+  transition: color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#feedback .icon {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+#checklist {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  text-align: left;
+  font-size: 14px;
+}
+
+#checklist li {
+  margin-bottom: 6px;
+  padding-left: 24px;
+  position: relative;
+  color: #d9534f; /* red for unmet */
+}
+
+#checklist li.valid {
+  color: #5cb85c; /* green for met */
+}
+
+#checklist li::before {
+  content: '✖';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+  line-height: 1;
+}
+
+#checklist li.valid::before {
+  content: '✔';
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Password Strength Checker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h2>🔐 Password Strength Checker</h2>
+    <div class="password-wrapper">
+      <input type="password" id="password" placeholder="Enter your password" />
+      <button id="toggle-password" aria-label="Show password">👁️</button>
+    </div>
+    <div id="strength-bar"></div>
+    <p id="feedback"></p>
+    <ul id="checklist">
+      <li id="len">8 characters</li>
+      <li id="upper">At least one uppercase letter</li>
+      <li id="lower">At least one lowercase letter</li>
+      <li id="num">At least one number</li>
+      <li id="sym">At least one special character</li>
+    </ul>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
